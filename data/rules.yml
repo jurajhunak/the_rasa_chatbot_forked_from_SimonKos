@@ -11,3 +11,9 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+
+- rule: Say bot's name
+  steps:
+  - intent: bot_name
+  - action: utter_botname
