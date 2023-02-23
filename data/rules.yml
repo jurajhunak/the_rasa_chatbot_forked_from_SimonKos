@@ -22,3 +22,5 @@ rules:
   steps:
   - intent: football
   - action: action_hello_world
+
+# hope it works
