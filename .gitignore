@@ -4,4 +4,6 @@
 
 models/
 
+/actions/__pycache__
+
 # is all good?
