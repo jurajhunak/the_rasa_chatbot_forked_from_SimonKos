@@ -9,6 +9,7 @@ intents:
   - mood_unhappy
   - bot_challenge
   - bot_name
+  - football
 
 responses:
   utter_greet:
@@ -33,9 +34,11 @@ responses:
   utter_botname:
   - text: "My name is Numpier."
 
+actions:
+  - action_hello_world  
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 
-  actions:
-  - action_hello_world
+

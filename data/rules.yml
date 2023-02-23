@@ -10,11 +10,15 @@ rules:
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
-  - action: utter_iamabot¨
-  - action: action_hello_world
-
+  - action: utter_iamabot
+ 
 
 - rule: Say bot's name
   steps:
   - intent: bot_name
   - action: utter_botname
+
+- rule: helloworld
+  steps:
+  - intent: football
+  - action: action_hello_world

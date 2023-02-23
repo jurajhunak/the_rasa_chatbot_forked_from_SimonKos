@@ -98,3 +98,10 @@ nlu:
     - what should I call you?
     - how could I adress you?
     - do you have a name?
+
+- intent: football
+  examples: |
+    - I play football.
+    - I kick round ball.
+    - I play soccer.
+    - I play sports.
