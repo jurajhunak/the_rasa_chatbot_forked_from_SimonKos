@@ -6,28 +6,58 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
 
-- story: sad path 1
+- story: interactive_story_1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: send_cv
+  - action: cv_form
+  - active_loop: cv_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: whatever@example.cz
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_cv
+  - intent: goodbye
   - action: utter_goodbye
+
+- story: interactive_story_sad_but_ok
+  steps:
+  - intent: send_cv
+  - action: cv_form
+  - active_loop: cv_form
+  - slot_was_set:
+    - requested_slot: email
+  - intent: deny
+  - action: utter_continue
+  - intent: deny
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: whatever@example.cz
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_cv
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_sad_but_no
+  steps:
+  - intent: send_cv
+  - action: cv_form
+  - active_loop: cv_form
+  - slot_was_set:
+    - requested_slot: email
+  - intent: deny
+  - action: utter_continue
+  - intent: affirm
+  - action: utter_goodbye
+
+
 
 
 # hope it works

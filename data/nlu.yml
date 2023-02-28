@@ -49,44 +49,7 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-    - good
-    - well
-    - super
-    - better
-    - the best
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
 
 - intent: bot_challenge
   examples: |
@@ -110,5 +73,99 @@ nlu:
     - I kick round ball.
     - I play soccer.
     - I play sports.
+
+
+- intent: background
+  examples: |
+    - tell me about your qualification.
+    - tell me about your education.
+    - what is your experience?
+    - where did you study?
+    - do you have any prior expertise?
+    - can you tell me about your previous work experience?
+    - work experience
+    - what skills have you developed in past jobs?
+    - how has your previous experience prepared you for this job?
+    - tell me about yourself
+    - who are you?
+    - what is your past
+    - past experience
+
+
+- intent: motivation
+  examples: |
+    - why are you interested in working in data science?
+    - what is your motivation?
+    - what you want to do?
+    - what job you want?
+    - how do you imagine your career?
+    - what position are you applying for?
+    - what kind of projects do you want to work on?
+    - future plans
+    - future career
+    - career goals
+
+
+- intent: expectation
+  examples: |
+    - what benefits are you looking for
+    - what kind of working environment do you prefer
+    - what do you want from the employee
+
+
+- intent: strongness
+  examples: |
+    - what are you good at?
+    - what is your best quality?
+    - what is your strength?
+    - why should I give you the job?
+    - why are you a good candidate?
+    - what makes you the best?
+
+
+- intent: weakness
+  examples: |
+    - what is your weakness?
+    - what is your weak point?
+    - what kind of support do you need from the team?
+    - what are you bad at?
+    - what do you want to change at yourself?
+
+- intent: send_cv
+  examples: |
+    - could you send me CV?
+    - can I get curriculum vitae?
+    - please send me CV
+    - do you have CV?
+    - could you provide me curriculum?
+
+- intent: inform
+  examples: |
+    - email is [whatever@example.cz](email)
+    - please send it to [whatever@example.cz](email)
+    - [whatever@example.cz](email)
+    - here: [whatever@example.cz](email)
+    - it is [whatever@example.cz](email)
+    - [abc@domain.cz](email)
+    - [xyz@gmail.com](email)
+    - [abc@yourdomain](email)
+    - @gmail.com
+    - @domain.cz
+
+
+- intent: contact
+  examples: |
+    - how could I contact you?
+    - please give me your contact info
+    - please give me your email
+    - please send me your telephone number
+    - where can I contact you?
+    - I want to talk with person
+    - I want a human
+    - give me your email
+    - can I speak with you personally?
+
+
+
 
 # hope it works

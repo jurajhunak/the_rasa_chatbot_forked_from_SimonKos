@@ -23,4 +23,60 @@ rules:
   - intent: football
   - action: action_hello_world
 
+- rule: Activate Email Form
+  steps:
+  - intent: send_cv
+  - action: cv_form
+  - active_loop: cv_form
+
+- rule: Sumbit CV to email
+  condition:
+  - active_loop: cv_form
+  steps:
+  - action: cv_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit_cv
+
+
+- rule: Background
+  steps:
+  - intent: background
+  - action: utter_ty_question
+  - action: action_background
+
+- rule: Motivation
+  steps:
+  - intent: motivation
+  - action: utter_ty_question
+  - action: action_motivation
+
+- rule: Expectation
+  steps:
+  - intent: expectation
+  - action: utter_ty_question
+  - action: action_expectation
+
+- rule: Weak
+  steps:
+  - intent: weakness
+  - action: utter_ty_question
+  - action: utter_weak
+
+- rule: Strong
+  steps:
+  - intent: strongness
+  - action: utter_ty_question
+  - action: utter_strong
+
+- rule: Give contact
+  steps:
+  - intent: contact
+  - action: utter_contact
+  - action: utter_give_mail
+  - action: utter_give_cell
+
+
+
 # hope it works

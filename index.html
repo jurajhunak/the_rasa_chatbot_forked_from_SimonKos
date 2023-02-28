@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+        body {
+          background-color: #6699cc;
+        }
+
+        #rasa-chat-widget .chat-bubble {
+            background-color: #3e6690; /* change to your desired color */
+            color: #000000; /* change to your desired color */
+        }
+
+
+
+        </style>
+        </head>
     <body>
-        <h1>Hello, my name is Simon!</h1>
         <div 
             id="rasa-chat-widget" 
-            data-websocket-url="http://35.158.100.199:5005/"  
-            data-height=475>
+            data-websocket-url="http://localhost:5005/"  
+            data-height=600>
+
         </div>
         <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
     </body>

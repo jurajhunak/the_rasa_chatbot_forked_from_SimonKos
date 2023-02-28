@@ -1,32 +1,53 @@
 version: "3.1"
 
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - bot_name
-  - football
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- bot_name
+- football
+- background
+- motivation
+- expectation
+- strongness
+- weakness
+- send_cv
+- inform
+- contact
+
+entities:
+- email
+
+forms:
+  cv_form:
+    required_slots:
+    - email
+
+slots:
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+      conditions:
+      - active_loop: cv_form
+        requested_slot: email
+
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hi. I am Simon's bot. As you may know, he is looking for a new job in datascience. You can ask me questions about him."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Thank you for your time. Bye"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
@@ -34,12 +55,45 @@ responses:
   utter_botname:
   - text: "My name is Numpier."
 
+  utter_submit_cv:
+  - text: "Thank you. I am sending the CV to {email}."
+
+  utter_ask_email:
+  - text: "Could you share your email so I can send the CV there?"
+  - text: "Where could I send the CV? Please give me your email address."
+
+  utter_ty_question:
+  - text: "Thank you for the question."
+  - text: Thank you for asking...
+  - text: Well, good question.
+  - text: Thank you. Let me elaborate on the question, please.
+
+  utter_continue:
+  - text: Are you sure You want to ditch me now?
+
+  utter_contact:
+  - text: You can contact me directly on my email or give me a call.
+
+  utter_give_mail:
+  - text: kossimon@icloud.com
+
+  utter_give_cell:
+  - text: "00420777070814"
+  
+  utter_strong:
+  - text: "My best quality is my analytical thinking. I always wanted to be a detective, spotting patterns and anomalies is my favourite."
+
+  utter_weak:
+  - text: "I spot patterns and anomalies in relationships and communication. Thus I need an understanding team open to discussion and clearly communicated responsibilities."
+
 actions:
   - action_hello_world
+  - validate_email_form
+  - action_background
+  - action_motivation
+  - action_expectation
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+
 
 
 # hope it works
